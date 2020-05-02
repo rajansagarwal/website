@@ -4,14 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Rajan Agarwal Portfolio</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    cursor: url('cursor.cur');
+}
+canvas {
+    background: black;
+    display: block;
+    cursor: url(cursor.cur), default;
 }
 header {
     position: absolute;
@@ -20,19 +29,18 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 40px 100px;
+    padding: 20px 50px;
     z-index: 10000;
-    transition: 0.6s;
+    transition: 0.6;
 }
 header .logo {
     position: relative;
     font-weight: 700;
-    color:white;
-    text-decoration: white;
+    color: white;
+    text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;
+    letter-spacing: 2px
 }
 header #toggle {
     position: relative;
@@ -68,40 +76,39 @@ header #toggle:after {
     transition: 0.5s;
     z-index: 2;
 }
-.banner.active {
-    transform: translateX(-400px);
-}
+
 .banner.active header #toggle:before {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(45deg);
+    transition: 0.5s;
 }
 .banner.active header #toggle:after {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%) rotate(-45deg);
+    transition: 0.5s;
+}
+.banner.active {
+    transform: translateX(-400px);
 }
 #navigation {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 0px;
     width: 400px;
     height: 100vh;
     background: #40c3ff;
     z-index: 1;
     text-align: center;
-    transition: 0.5s;
- 
 }
 #navigation.active {
-    right: 0px;
-   
+    right: 0;
 }
 #navigation ul {
     position: relative;
     display: flex;
     flex-direction: column;
-   
 }
 #navigation ul li {
     list-style: none;
@@ -115,8 +122,9 @@ header #toggle:after {
     text-transform: uppercase;
 }
 .content {
-    max-width: 600px;
+    max-width: 800px;
 }
+
 .content h2 {
     color: white;
     font-size: 2.5em;
@@ -158,91 +166,116 @@ header #toggle:after {
     height: 60px;
     text-decoration: none;
     border: 1px solid white;
-    margin: 50px 10 10;
+    margin: 20px 10 10;
 }
 .sci li a:hover {
     background: white;
 }
-.sci li a img {
-    max-width: 20px;
-    filter: invert(1);
-    mix-blend-mode: difference;
-}
-@media (max-width: 767px) {
+@media (max-width) {
     header {
         padding: 20px 50px;
     }
     .banner {
-    padding: 100px 50px 150px;
+        padding: 100px 50px 150px;
     }
-    .banner .content p,
-    .banner .content a 
-    {
+    .banner h2 {
+        font-size: 1.8em;
+    }
+    .banner .content p
+    .banner .content a {
         font-size: 1em;
     }
-    .banner .active {
-        transform: translateX(-250px);
+    .banner.active {
+        transform: translateX(-200px);
+    }
+    .banner{
+        transform: translateX(200px);
     }
     #navigation {
         width: 250px;
-        text-align: center;
     }
     #navigation ul li a {
         font-size: 1.5em;
         margin: 5px 0;
     }
     .sci {
-        position: absolute;
-        bottom: 50px;
-        right: inital;
-        flex-direction: row;
+        position: absolute; 
     }
     .sci li a {
         margin: initial;
-        margin-right: 10px;
+        margin-right: 1px;
     }
 }
+.sci {
+    position: absolute;
+    bottom: 20px;
+    right: initial;
+    flex-direction: row;
+}
+.sci li {
+    list-style: none;
+}
+.sci li a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    border: 1px solid white;
+    margin: 20px 0 0;
+}
+.sci li a:hover {
+    background: white;
+}
+
+
 
 </style>
+</head>
 <body>
     <section class="banner" id="sec">
-        <header>
+        <header> 
             <a href="index.html" class="logo">Rajan</a>
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
-            <h2>Hi, I'm <span>Rajan Agarwal</span></h2>
-            <p>I am a 14 year old student, who has helped save tens of thousands of lives, 
-                placed in a provincial competition, co-represented a school,
-                spoken on live TV, started a business and met Barak Obama! 
-                And I've only just started high school!</p>
-                <a href="about.html">Know More</a>
-        </div>
 
-        <ul class="sci">
-            <li><a href="#"><img src="instagram.png" ></a></li>
-            <li><a href="#"><img src="twi.png"></a></li>
-            <li><a href="#"><img src="youtube1.png"></a></li>
-        </ul>
+<h2>Hi, I am <span>Rajan Agarwal</span></h2>
+<p>I am a 14 year old student, who has helped save tens of thousands of lives, 
+    placed in a provincial competition, co-represented a school,
+    spoken on live TV, started a business and met Barak Obama! 
+    And I've just started high school!</p>
+    
+    <a href="about.html">Know More</a>
+</div>
+<ul class="sci">
+    <li><a href="https://www.instagram.com/itsrajan05/"><img src="instagram.png" width="45px" height="45px"></a></li>
+    <li><a href="https://twitter.com/RajanAgarwal_"><img src="twi.png" width="50px" height="50px"></a></li>
+    <li><a href="https://www.youtube.com/channel/UC0_Q2jixIi_zVTEUWMChyLw?view_as=subscriber"><img src="youtube1.png" width="50px" height="50px"></a></li>
+</ul>
+
+
+        </div>
     </section>
     <div id="navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="education.html">Education</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="education.html#">Education</a></li>
             <li><a href="awards.html">Awards</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <img src="photo.png" height="390px" width="390px">
         </ul>
-        <img src="photo.png" height="350px" width="350px">
+  
     </div>
+    <script type="text/javascript">
+        function toggle(){
+            var sec = document.getElementById('sec');
+            var nav = document.getElementById('navigation');
+            sec.classList.toggle('active');
+        }
+        </script>
 </body>
-<script type="text/javascript">
-    function toggle(){
-        var sec = document.getElementById('sec');
-        var nav = document.getElementById('navigation');
-        sec.classList.toggle('active');
-        nav.classList.toggle('active');
-    }
-</script>
-
 </html>
