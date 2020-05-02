@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Rajan Agarwal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    z-index: 10000;
+    transition: 0.6;
+}
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+header #toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+header #toggle:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+header #toggle:after {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.banner.active header #toggle:before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    transition: 0.5s;
+}
+.banner.active header #toggle:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    transition: 0.5s;
+}
+.banner.active {
+    transform: translateX(-400px);
+}
+#navigation {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 400px;
+    height: 100vh;
+    background: #40c3ff;
+    z-index: 1;
+    text-align: center;
+}
+#navigation.active {
+    right: 0;
+}
+#navigation ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#navigation ul li {
+    list-style: none;
+}
+#navigation ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.content {
+    max-width: 1200px;
+    position: relative;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    letter-spacing: 0.5em;
+    color: white;
+    margin-top: -435px;
+    margin-left: -20px;
+}
+video {
+    margin-top: -120px;
+    margin-left: -20px;
+
+}
+.content h1 {
+    color: white;
+    font-size: 4em;
+    
+}
+.content h1 span {
+    display: inline-block;
+    animation: animate 1s linear forwards;
+    opacity: 0;
+}
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1; 
+        transform: rotateY(0deg);
+        filter: blur(0);
+    } 
+}
+h1 span:nth-child(1) {
+    animation-delay: 1s;
+}
+h1 span:nth-child(2) {
+    animation-delay: 1.4s;
+}
+h1 span:nth-child(3) {
+    animation-delay: 1.8s;
+}
+h1 span:nth-child(4) {
+    animation-delay: 2.2s;
+}
+h1 span:nth-child(5) {
+    animation-delay: 2.6s;
+}
+h1 span:nth-child(6) {
+    animation-delay: 3s;
+}
+h1 span:nth-child(7) {
+    animation-delay: 3.4s;
+}
+h1 span:nth-child(8) {
+    animation-delay: 3.8s;
+}
+.content p {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+.content a {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: black;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.sci {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+}
+.sci li {
+    list-style: none;
+}
+.sci li a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid white;
+    margin: 10px 0 0;
+}
+.sci li a:hover {
+    background: white;
+}
+@media (max-width) {
+    header {
+        padding: 20px 50px;
+    }
+    .banner {
+        padding: 100px 50px 150px;
+    }
+    .banner h2 {
+        font-size: 1.8em;
+    }
+    .banner .content p
+    .banner .content a {
+        font-size: 1em;
+    }
+    .banner{
+        transform: translateX(250px);
+    }
+    #navigation {
+        width: 250px;
+    }
+    #navigation ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    .sci {
+        position: absolute;
+        bottom: 50px;
+        right: initial;
+        flex-direction: row; 
+    }
+    .sci li a {
+        margin: initial;
+        margin-right: 10px;
+    }
+.projects {
+    float: left;
+    position: relative;
+    vertical-align: middle;
+    margin-bottom: 0px;
+    border-width: 5px;
+    border-color: white;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+.smoke {
+    height: 100vh;
+    background: black;
+}
+.smoke:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+img {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+.wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0 20px;
+}
+}
+</style>
+</head>
+<body>
+    <section class="banner" id="sec">
+        <header> 
+            <a href="index.html" class="logo">Rajan</a>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+        <div class="content">
+<div class = "smoke">
+    <video src="smoke.mp4" autoplay muted></video>
+<h1>
+    <span>A</span>
+    <span>b</span>
+    <span>o</span>
+    <span>u</span>
+    <span>t</span>
+    <span></span>
+    <span>M</span>
+    <span>e</span>
+
+    </h1>
+</div>
+<div class="about-text"> 
+<p>With a passion for business, photography and music, I find myself to be a balanced leader in the community. Through academics, athletics and arts, I am able to succeed on a daily basis. Many opportunities have been given to me, in which I have taken to my advantage to become a better self. As Paul Brandt once said, "Don't tell me the sky is the limit when there are footprints on the moon". But I don't want to stop there. With the people in my life that have helped me achieve great things, I can soar, to the sky, to the moon and to the stars.</p>
+<p>You can reach me at rajan.ag005@gmail.com or at my iPhone: 1+(647)-973-4401!</p>
+<br>
+</div>
+    <div class="projects">
+        <img src="projects.png" height="600px" width="1200px">
+
+    </div>
+</div>
+</div>
+</div>
+</section>
+    </section>
+    <div id="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="education.html#">Education</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <img src="photo.png">
+        </ul>
+  
+    </div>
+    <script type="text/javascript">
+        function toggle(){
+            var sec = document.getElementById('sec');
+            var nav = document.getElementById('navigation');
+            sec.classList.toggle('active');
+        }
+        </script>
+</body>
+</html>
