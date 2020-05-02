@@ -185,6 +185,9 @@ header #toggle:after {
     .banner .content a {
         font-size: 1em;
     }
+    .banner.active {
+        transform: translateX(-250px);
+    }
     .banner{
         transform: translateX(250px);
     }
@@ -195,16 +198,19 @@ header #toggle:after {
         font-size: 1.5em;
         margin: 5px 0;
     }
-    .sci { 
-        position: absolute;
-        bottom: 20px;
-        right: initial;
-        flex-direction: row; 
+    .sci {
+        position: absolute; 
     }
     .sci li a {
         margin: initial;
         margin-right: 1px;
     }
+}
+.sci {
+    position: absolute;
+    bottom: 20px;
+    right: initial;
+    flex-direction: row;
 }
 .sci li {
     list-style: none;
@@ -256,11 +262,11 @@ span:before {
 }
 @keyframes animate {
     0% {
-        content: 'Rajan';
+        content: 'Rajan Agarwal';
         color: #40c3ff;
     }
     12.5% {
-        content: "Rajan";
+        content: "Rajan Agarwal";
         color: #40c3ff;  
     }
     25% {
@@ -288,7 +294,7 @@ span:before {
         color: #40c3ff;
     }
     100% {
-        content: "Rajan";
+        content: "Rajan Agarwal";
         color: #40c3ff; 
     }
     
