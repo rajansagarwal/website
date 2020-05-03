@@ -6,7 +6,7 @@
     <title>Rajan Agarwal Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+ 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 *
@@ -78,7 +78,7 @@ header nav ul li a:active {
         display: none;
     }
     header nav {
-      display: none;
+
        position: absolute;
        height: calc(100vh - 50px);
        background: #333;
@@ -203,6 +203,9 @@ header nav ul li a:active {
 <body>
     <section class="banner" id="sec">
         <header> 
+            <div id="toggle" onclick="toggle()">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <div class="logo">Rajan</div>
             <nav class="active">
                 <ul>
@@ -214,8 +217,6 @@ header nav ul li a:active {
                 <li><a href="projects.html">Projects</a></li>
             </ul>
             </nav>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
 
