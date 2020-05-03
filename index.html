@@ -15,55 +15,89 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    cursor: url('cursor.cur');
-}
-canvas {
-    background: black;
-    display: block;
-    cursor: url(cursor.cur), default;
+    background-attachment: fixed;
+    background-position: center;
 }
 header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    z-index: 10000;
-    transition: 0.6;
+   padding: 0 100px;
+   background: #101010;
+   width: 100%;
+   box-sizing: border-box;
+
 }
 header .logo {
-    position: relative;
-    font-weight: 700;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+header nav {
+    float: right;
+    color: white;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+header nav ul li {
+    list-style: none;
+}
+header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
     color: white;
     text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px
+    display: block;
 }
-header #toggle {
-    position: relative;
-    width: 30px;
-    height: 30px;
+header nav ul li a:hover,
+header nav ul li a:active {
+    color: white;
+    background: black;
+}
+.menu-toggle {
+    color: white;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
     cursor: pointer;
+    display: none;
 }
-header #toggle:before {
-    content: '';
-    position: absolute;
-    top: 7px;
-    width: 100%;
-    height: 2px;
-    background: white;
+@media (max-width: 767px) {
+    header {
+        padding: 0 20px;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    header nav {
+      display: none;
+       position: absolute;
+       height: calc(100vh - 50px);
+       background: #333;
+       top: 50px;
+       left: -100%;
+       transition: 0.5s;
+    }
+    header nav ul {
+        display: block;
+        text-align: center;
+    }
+    header nav.active {
+        left: 0;
+    }
+    header nav ul li a {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
 }
-header #toggle:after {
-    content: '';
-    position: absolute;
-    bottom: 7px;
-    width: 100%;
-    height: 2px;
-    background: white;
-}
+
 .banner {
     position: relative;
     width: 100%;
@@ -77,50 +111,6 @@ header #toggle:after {
     z-index: 2;
 }
 
-.banner.active header #toggle:before {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) rotate(45deg);
-    transition: 0.5s;
-}
-.banner.active header #toggle:after {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) rotate(-45deg);
-    transition: 0.5s;
-}
-.banner.active {
-    transform: translateX(-400px);
-}
-#navigation {
-    position: fixed;
-    top: 0;
-    right: 0px;
-    width: 400px;
-    height: 100vh;
-    background: #40c3ff;
-    z-index: 1;
-    text-align: center;
-}
-#navigation.active {
-    right: 0;
-}
-#navigation ul {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-#navigation ul li {
-    list-style: none;
-}
-#navigation ul li a {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 2em;
-    font-weight: 600;
-    text-transform: uppercase;
-}
 .content {
     max-width: 800px;
 }
@@ -175,29 +165,7 @@ header #toggle:after {
     header {
         padding: 20px 50px;
     }
-    .banner {
-        padding: 100px 50px 150px;
-    }
-    .banner h2 {
-        font-size: 1.8em;
-    }
-    .banner .content p
-    .banner .content a {
-        font-size: 1em;
-    }
-    .banner.active {
-        transform: translateX(-200px);
-    }
-    .banner{
-        transform: translateX(200px);
-    }
-    #navigation {
-        width: 250px;
-    }
-    #navigation ul li a {
-        font-size: 1.5em;
-        margin: 5px 0;
-    }
+
     .sci {
         position: absolute; 
     }
@@ -229,14 +197,24 @@ header #toggle:after {
     background: white;
 }
 
-
-
 </style>
+
 </head>
 <body>
     <section class="banner" id="sec">
         <header> 
-            <a href="index.html" class="logo">Rajan</a>
+            <div class="logo">Rajan</div>
+            <nav class="active">
+                <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="education.html#">Education</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+            </nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <div id="toggle" onclick="toggle()"></div>
         </header>
         <div class="content">
@@ -259,23 +237,15 @@ header #toggle:after {
         </div>
     </section>
     <div id="navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="education.html#">Education</a></li>
-            <li><a href="awards.html">Awards</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <img src="photo.png" height="390px" width="390px">
-        </ul>
   
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript">
-        function toggle(){
-            var sec = document.getElementById('sec');
-            var nav = document.getElementById('navigation');
-            sec.classList.toggle('active');
-        }
-        </script>
+        $(document).ready(function(){
+            $('.menu-toggle').click(function(){
+                $('nav').toggleClass('active')
+            })
+})
+    </script>
 </body>
 </html>
