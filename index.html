@@ -98,14 +98,18 @@ header nav ul li a.active {
 }
 .sci {
     position: absolute;
-    bottom: 20px;
-    right: initial;
-    flex-direction: row;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+    margin-bottom: 200px;
 }
 .sci li {
     list-style: none;
 }
 .sci li a {
+    margin: initial;
+    margin-right: 10px;
     position: relative;
     display: grid;
     place-items: center;
@@ -113,21 +117,27 @@ header nav ul li a.active {
     height: 60px;
     text-decoration: none;
     border: 1px solid white;
-    margin: 20px 0 0;
+    margin: 10px 0 0;
 }
 .sci li a:hover {
     background: white;
 }
 
-@media (max-width: ) {
+@media (max-width: 991px) {
     header {
         padding: 20px 50px;
     }
     .sci {
-        position: absolute; 
+        position: absolute;
+        flex-direction: row;
+        margin-bottom: 0px;
+        margin-right: 90px;
     }
     .sci li a {
         margin: initial;
+        display: flex;
+        flex-direction: row;
+        right: initial;
         margin-right: 1px;
     }
 }
